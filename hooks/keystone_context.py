@@ -273,6 +273,7 @@ class KeystoneLoggingContext(context.OSContextGenerator):
     def __call__(self):
         ctxt = {}
         debug = config('debug')
+        ctxt['json_logs'] = config('json-logs')
         if debug:
             ctxt['root_level'] = 'DEBUG'
         log_level = config('log-level')
